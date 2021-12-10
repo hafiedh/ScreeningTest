@@ -5,6 +5,8 @@
     <string name="guest">Pilih Guest</string>
     <string name="event">Pilih event</string>
     <string name="next">Next</string>
+    <string name="palindrome">isPalindrome</string>
+    <string name="notPalindrome">not palindrome</string>
 
     <string-array name="nameEvent">
         <item>Event A</item>
