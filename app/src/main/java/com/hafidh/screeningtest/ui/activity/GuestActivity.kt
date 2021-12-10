@@ -68,7 +68,6 @@ class GuestActivity : AppCompatActivity() {
             addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
             this.adapter = adapter
         }
-        Snackbar.make(binding.root, "Data Success ${guests}", Snackbar.LENGTH_SHORT).show()
     }
 
 
