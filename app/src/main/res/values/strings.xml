@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">ScreeningTest</string>
+    <string name="name">Masukan nama</string>
+    <string name="nameInEvent">Nama : </string>
+    <string name="guest">Pilih Guest</string>
+    <string name="event">Pilih event</string>
+    <string name="next">Next</string>
+
+    <string-array name="nameEvent">
+        <item>Event A</item>
+        <item>Event B</item>
+        <item>Event C</item>
+        <item>Event D</item>
+        <item>Event E</item>
+        <item>Event F</item>
+        <item>Event G</item>
+    </string-array>
+
+    <string-array name="date">
+        <item>12 Sep 2021</item>
+        <item>13 Sep 2021</item>
+        <item>14 Sep 2021</item>
+        <item>15 Sep 2021</item>
+        <item>16 Sep 2021</item>
+        <item>17 Sep 2021</item>
+        <item>18 Sep 2021</item>
+    </string-array>
+
+    <integer-array name="photo">
+        <item>@drawable/hand</item>
+        <item>@drawable/bug</item>
+        <item>@drawable/budiluhur</item>
+        <item>@drawable/catazas</item>
+        <item>@drawable/catazas</item>
+        <item>@drawable/catazas</item>
+        <item>@drawable/catazas</item>
+    </integer-array>
+
+</resources>
