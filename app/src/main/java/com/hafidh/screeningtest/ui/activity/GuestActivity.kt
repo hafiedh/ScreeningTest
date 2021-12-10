@@ -29,6 +29,7 @@ class GuestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        supportActionBar?.title = "Guests"
 
         viewModel.getData()
         viewModel.guest.flowWithLifecycle(lifecycle, Lifecycle.State.STARTED)
