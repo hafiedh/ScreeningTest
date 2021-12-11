@@ -20,6 +20,10 @@ class GuestViewModel @Inject constructor(
     private val _guest = MutableStateFlow<UiData>(UiData.Init)
     val guest = _guest.asStateFlow()
 
+    init {
+        getData()
+    }
+
     fun getData() {
         viewModelScope.launch {
             repository.getData()

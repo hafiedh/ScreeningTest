@@ -2,6 +2,7 @@ package com.hafidh.screeningtest.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -28,14 +29,16 @@ class EventOrGuestsActivity : AppCompatActivity() {
                 val birthDate = result.data?.getStringExtra(EXTRA_BIRTH_GUEST)
                 val birthDateSplit = birthDate?.split("-")
                 val birthValue = birthDateSplit?.get(2)?.toInt()
-                birthValue?.let {
+                val montValue = birthDateSplit?.get(1)?.toInt()
+                if (birthValue != null && montValue != null) {
+                    val prime = isPrimeOrNot(montValue)
                     Toast.makeText(
                         this,
                         when {
-                            it % 2 == 0 && it % 3 == 0 -> "Ios"
-                            it % 2 == 0 -> "BlackBerry"
-                            it % 3 == 0 -> "Android"
-                            else -> "Feature Phone"
+                            birthValue % 2 == 0 && birthValue % 3 == 0 -> "Ios And $prime"
+                            birthValue % 2 == 0 -> "BlackBerry And $prime"
+                            birthValue % 3 == 0 -> "Android And $prime"
+                            else -> "Feature Phone And $prime"
                         }, Toast.LENGTH_LONG
                     ).show()
                 }
@@ -76,6 +79,13 @@ class EventOrGuestsActivity : AppCompatActivity() {
         }
     }
 
+    private fun isPrimeOrNot(month: Int): String {
+        var isPrimeOrNot = ""
+        isPrimeOrNot = if (month % 3 == 0 || month <= 1 && month != 3 && month != 2) {
+            "Not Prime Month"
+        } else "Prime Month"
+        return isPrimeOrNot
+    }
 
     companion object {
         const val RESULT_CODE_EVENT = 1

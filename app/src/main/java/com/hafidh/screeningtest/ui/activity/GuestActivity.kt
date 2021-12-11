@@ -60,7 +60,6 @@ class GuestActivity : AppCompatActivity() {
     }
 
     private fun onDataLoaded(guests: List<GuestsItem>) {
-
         val adapter = GuestAdapter(guests, ::onGuestItemClick)
         binding.rvGuest.apply {
             layoutManager = GridLayoutManager(context, 2)
