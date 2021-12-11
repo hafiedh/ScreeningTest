@@ -84,6 +84,7 @@ class EventOrGuestsActivity : AppCompatActivity() {
         isPrimeOrNot = if (month % 3 == 0 || month <= 1 && month != 3 && month != 2) {
             "Not Prime Month"
         } else "Prime Month"
+
         return isPrimeOrNot
     }
 

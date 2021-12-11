@@ -8,4 +8,6 @@ data class EventItem(
     val name: String,
     val date: String,
     val photo: Int,
+    val latitude: Double? = null,
+    val longitude: Double? = null
 ): Parcelable

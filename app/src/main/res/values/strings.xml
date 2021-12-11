@@ -7,6 +7,10 @@
     <string name="next">Next</string>
     <string name="palindrome">isPalindrome</string>
     <string name="notPalindrome">not palindrome</string>
+    <string name="selamat_datang">Selamat Datang!</string>
+    <string name="ket">Sertakan gambar profile anda. Untuk melengkapi profile</string>
+    <string name="selesai">Selesai</string>
+    <string name="media">Media</string>
 
     <string-array name="nameEvent">
         <item>Event A</item>
@@ -37,5 +41,6 @@
         <item>@drawable/catazas</item>
         <item>@drawable/catazas</item>
     </integer-array>
+
 
 </resources>

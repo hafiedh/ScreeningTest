@@ -1,5 +1,6 @@
 package com.hafidh.screeningtest.ui.activity.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -7,11 +8,9 @@ import com.hafidh.screeningtest.data.model.EventItem
 import com.hafidh.screeningtest.databinding.ItemEventBinding
 
 class EventAdapter(
-    private val list: List<EventItem>,
+    private var list: List<EventItem>,
     val onClick: (eventItem: EventItem) -> Unit
 ) : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
-
-
 
     inner class EventViewHolder(private val binding: ItemEventBinding) :
         RecyclerView.ViewHolder(binding.root) {

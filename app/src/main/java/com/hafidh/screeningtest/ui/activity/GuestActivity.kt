@@ -2,6 +2,8 @@ package com.hafidh.screeningtest.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
+import com.hafidh.screeningtest.R
 import com.hafidh.screeningtest.data.model.GuestsItem
 import com.hafidh.screeningtest.databinding.ActivityGuestBinding
 import com.hafidh.screeningtest.ui.activity.EventOrGuestsActivity.Companion.RESULT_CODE_GUEST
@@ -32,10 +35,15 @@ class GuestActivity : AppCompatActivity() {
         supportActionBar?.title = "Guests"
 
         viewModel.getData()
+        binding.swipe.setOnRefreshListener {
+            viewModel.getData()
+            binding.swipe.isRefreshing = false
+        }
         viewModel.guest.flowWithLifecycle(lifecycle, Lifecycle.State.STARTED)
             .onEach { state ->
                 handleState(state)
             }.launchIn(lifecycleScope)
+
     }
 
     private fun handleState(state: GuestViewModel.UiData) {
@@ -69,5 +77,6 @@ class GuestActivity : AppCompatActivity() {
         }
     }
 
-
 }
+
+
